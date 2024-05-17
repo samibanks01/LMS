@@ -1,0 +1,197 @@
+header {
+    background-color: #4CAF50; // #3f51b5
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+/* */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+/* course html module */
+
+.course-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin-bottom: 10px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: black;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/*  quiz module  */
+
+.quiz-container {
+    margin: 0 auto;
+    width: 600px;
+  }
+  
+  .quiz-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .quiz-container li {
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    margin-bottom: 10px;
+  }
+
+/* hero module */
+
+.hero-slider {
+    justify-content: center;
+    display: flex;
+    overflow: hidden; /* Hide overflowing content */
+    position: relative; /* Required for animation */
+    height: 60vh; /* Adjust height as needed */
+    width: 100%;
+    border: 5px solid #000;
+  }
+  
+  .hero-slide {
+    opacity: 0;
+    flex: 1; /* Make slides occupy full width */
+    animation: slideInOut 10s ease-in-out infinite alternate; /* Animation properties */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 50px;
+    width: 50%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    color: white; /* Text color for contrast */
+    /* Set initial position off-screen for slides other than the active one */
+    transform: (50%); /* Adjust based on slide width */
+  }
+
+  @media (max-width: 768px) {
+    .hero-slide {
+      background-size: contain; /* Adjust for smaller screens */
+    }
+    .active {
+        background-size: contain; /* Adjust for smaller screens */
+      }
+  }
+  
+  .hero-content {
+    position: absolute; /* Absolute positioning for content layering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Center content within slides */
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes slideInOut {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  .hero-slide.active {
+    /* Style for the currently active slide */
+    opacity: 1;
+    transform: translateX(0); /* Bring active slide into view */
+    animation: slideIn 10s ease-in-out infinite alternate; /* Animation properties */
+  }
+  
+/* progress bar */
+
+#progress-bar-container {
+    width: 50%;
+    margin: 0 auto 20px; /* Center and add some margin */
+    height: 10px; /* Adjust height as needed */
+    background-color: #ddd; /* Light gray background */
+  }
+  
+  #progress-bar {
+    height: 100%; /* Fill entire container height */
+    background-color: #4CAF50; /* Green color for progress */
+    transition: width 0.5s ease-in-out; /* Smooth transition effect */
+  }
+
+  .course-content div { /* Apply to all content sections */
+    display: none; /* Initially hide all sections */
+  }
+  
+  .course-content div.active { /* Style for active section */
+    display: block;
+  }
+
+  .optional-content {
+    display: none; /* Initially hide optional content */
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+/* ---- */
